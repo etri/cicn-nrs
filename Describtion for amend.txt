@@ -1,0 +1,107 @@
+./ccnxlibs/libccnx-common/ccnx/common/ccnx_ContentObject.c
+Lookup 과정 수행을 위해 Log_check 설정
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_ContentObjectFacadeV1.c
+Lookup 과정 수행을 위해 ccnxTlvDictionary 기능 수정
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_ContentObjectInterface.h
+Lookup 수행을 위한 ccnxTlvDictionary 함수 정의 
+
+./ccnxlibs/libccnx-common/ccnx/common/ccnx_Interest.h
+Lookup, Interest 패킷에서 name을 가져오기 위한 GetName 함수 헤더 정의
+
+./ccnxlibs/libccnx-common/ccnx/common/ccnx_Interest.c
+Interest 패킷에서 name을 가져오기 위한 ccnxInterest_GetName 함수 정의
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_InterestFacadeV1.c
+Interest 패킷의 확장을 통한 name 추가 기능
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_InterestInterface.h
+Keyname 처리를 위한 새로운 헤더 파일 등록 및 함수 등록
+
+./ccnxlibs/libccnx-portal/ccnx/api/ccnx_Portal/ccnx_PortalRTA.c
+수정된 Interest 에 대해 보내고 받을 때 체크 기능 
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_TlvDictionary.h
+새로운 name 저장을 위한 buffer 처리 함수 정의
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_TlvDictionary.c
+새로운 name 처리 및 저장을 위한 buffer 함수 
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvDecoder.h
+새로운 type 확인 함수 정의
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvEncoder.c
+인코딩 type 추가 및 처리 함수
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvPacket.c
+Dictionary 기반의 인코딩 함수 기능 추가
+./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_MessageEncoder.c
+Dictionary 기반의 인코딩을 위한 헤더 파일 추가 및 payload 구성 함수 작성
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_PacketEncoder.c
+Packet을 만들 때 새로운 name에 대한 encoding 기능 및 디버깅 코드 추가
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_TlvDictionary.h
+Lookup 기능을 위한 dictionary 구조를 통해 name을 가져오는 함수 헤더 정의
+
+./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_Types.h
+Lookup을 위해 등록, lookup 등을 위한 type 정의
+
+ccnxReg_Client.c
+ccnx 기반 ping 클라이언트에서 name 관련 메시지 전송하는 기능을 추가
+ccnxReg_Server.c
+ccnx 기반 ping 서버를 이용하여 name 관련 메시지를 받아 처리 기능 추가
+
+ccnxSimpleFileTransfer_Client.c
+ccnx 파일을 전송하는 클라이언트에 name lookup 등의 함수 기능 추가
+
+ccnxSimpleFileTransfer_Common.c
+파일 전송을 위해 name 관련 함수 추가
+
+ccnxSimpleFileTransfer_Server.c
+ccnx 파일 전송 서버에 name 관련 함수 추가
+
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_FIB.h
+Metis 에서 관련 name 구조체 인식을 위한 값 세팅
+
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_FIB.c
+Metis 에서 관련 name 구조체 인식을 위한 함수 기능 추가
+
+./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Forwarder.c
+Name 추가를 위한 구조체 수정 및 디버깅 코드 삽입
+
+./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Message.h
+metis에서 받은 메시지에서 name을 받아 오는 함수 헤더 정의
+
+./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Message.c
+metis에서 받은 메시지에서 name을 받아 오는 함수 정의
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_MessageProcessor.c
+메시지 중 key name을 받아오는 함수 정의
+
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_MessageProcessor.h
+메시지 중 key name을 받아오는 함수 헤더 정의
+
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_PitEntry.c
+Key name에 대한 PIT 추가 하는 함수 및 디버깅 코드
+
+metis_RCT.c
+name matching 을 위한 코드 삽입
+
+metis_RCT.h
+name 기능 추가를 위한 헤더 추가
+
+./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_StandardPIT.c
+Key name 등록을 위한 구조 정의 및 메시지 처리 구조 정의
+
+./sb-forwarder/metis/ccnx/forwarder/metis/io/metis_StreamConnection.c
+메시지 처리를 위한 디버깅 코드 삽입
+
+./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSchemaV1.c
+Key name 등을 위한 type 값 정의 및 name 값 처리 기능
+
+./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSkeleton.h
+ccnx payload 값에 name 넣기 위한 함수 헤더 정의
+./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSkeleton.c
+ccnx payload 값에 name 넣기 위한 함수 정의
+
+
