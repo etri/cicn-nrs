@@ -1,107 +1,111 @@
 ./ccnxlibs/libccnx-common/ccnx/common/ccnx_ContentObject.c
-Lookup 과정 수행을 위해 Log_check 설정
+Set Log_check to perform lookup procedure
 
 ./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_ContentObjectFacadeV1.c
-Lookup 과정 수행을 위해 ccnxTlvDictionary 기능 수정
+Modified ccnxTlvDictionary function to perform lookup procedure
 
-./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_ContentObjectInterface.h
-Lookup 수행을 위한 ccnxTlvDictionary 함수 정의 
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_ContentObjectInterface.h 
+Defined the ccnxTlvDictionary function to perform lookup procedure
 
 ./ccnxlibs/libccnx-common/ccnx/common/ccnx_Interest.h
-Lookup, Interest 패킷에서 name을 가져오기 위한 GetName 함수 헤더 정의
+Defined GetName function header to get name from Interest packet
 
 ./ccnxlibs/libccnx-common/ccnx/common/ccnx_Interest.c
-Interest 패킷에서 name을 가져오기 위한 ccnxInterest_GetName 함수 정의
+Defined ccnxInterest_GetName function to get name from Interest packet
 
 ./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_InterestFacadeV1.c
-Interest 패킷의 확장을 통한 name 추가 기능
+Added more than one name into Interest by expanding Interest packet
 
 ./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_InterestInterface.h
-Keyname 처리를 위한 새로운 헤더 파일 등록 및 함수 등록
+Registered new header files and functions to process Key_Name
 
-./ccnxlibs/libccnx-portal/ccnx/api/ccnx_Portal/ccnx_PortalRTA.c
-수정된 Interest 에 대해 보내고 받을 때 체크 기능 
+./ccnxlibs/libccnx-portal/ccnx/api/ccnx_Portal/ccnx_PortalRTA.c 
+Added checking function when sending and receiving modified Interest
 
 ./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_TlvDictionary.h
-새로운 name 저장을 위한 buffer 처리 함수 정의
-./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_TlvDictionary.c
-새로운 name 처리 및 저장을 위한 buffer 함수 
+Defined a buffer processing function to store a new Name
+
+./ccnxlibs/libccnx-common/ccnx/common/internal/ccnx_TlvDictionary.c 
+Defined buffer function for processing and storing new Name
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvDecoder.h
-새로운 type 확인 함수 정의
+Defined a function for checking a new type 
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvEncoder.c
-인코딩 type 추가 및 처리 함수
+Defined functions for adding and processing encoding type
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/ccnxCodec_TlvPacket.c
-Dictionary 기반의 인코딩 함수 기능 추가
+Added a function of encoding function based on Dictionary
+
 ./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_MessageEncoder.c
-Dictionary 기반의 인코딩을 위한 헤더 파일 추가 및 payload 구성 함수 작성
+Added a header file for encoding based on Dictionary and writing the payload configuration function
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_PacketEncoder.c
-Packet을 만들 때 새로운 name에 대한 encoding 기능 및 디버깅 코드 추가
+Added encoding function and debugging code for new Name when creating packet
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_TlvDictionary.h
-Lookup 기능을 위한 dictionary 구조를 통해 name을 가져오는 함수 헤더 정의
+Defined a function header getting Name through dictionary structure for lookup function
 
 ./ccnxlibs/libccnx-common/ccnx/common/codec/schema_v1/ccnxCodecSchemaV1_Types.h
-Lookup을 위해 등록, lookup 등을 위한 type 정의
+Defined type for registration, lookup, etc.
 
 ccnxReg_Client.c
-ccnx 기반 ping 클라이언트에서 name 관련 메시지 전송하는 기능을 추가
+Added ability to send Name related message from ccnx based ping client
+
 ccnxReg_Server.c
-ccnx 기반 ping 서버를 이용하여 name 관련 메시지를 받아 처리 기능 추가
+Added a function for processing the Name related messages received by using ccnx-based ping server
 
 ccnxSimpleFileTransfer_Client.c
-ccnx 파일을 전송하는 클라이언트에 name lookup 등의 함수 기능 추가
+Added functions such as Name lookup to client sending ccnx file
 
 ccnxSimpleFileTransfer_Common.c
-파일 전송을 위해 name 관련 함수 추가
+Added Name related functions for file transfer
 
 ccnxSimpleFileTransfer_Server.c
-ccnx 파일 전송 서버에 name 관련 함수 추가
+Added name-related functions to the ccnx file transfer server
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_FIB.h
-Metis 에서 관련 name 구조체 인식을 위한 값 세팅
+Set the value for recognizing the Name structure in Metis
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_FIB.c
-Metis 에서 관련 name 구조체 인식을 위한 함수 기능 추가
+Added functions for recognizing the Name structure in Metis
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Forwarder.c
-Name 추가를 위한 구조체 수정 및 디버깅 코드 삽입
+Added for modifying the structure and debugging code to add Name
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Message.h
-metis에서 받은 메시지에서 name을 받아 오는 함수 헤더 정의
+Defined the function header that receives Name in message received from metis
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/core/metis_Message.c
-metis에서 받은 메시지에서 name을 받아 오는 함수 정의
+Defined a function that gets Name from message received from metis
+
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_MessageProcessor.c
-메시지 중 key name을 받아오는 함수 정의
+Defined a function that receives key Name from message
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_MessageProcessor.h
-메시지 중 key name을 받아오는 함수 헤더 정의
+Defined a function header that receives key Name from message
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_PitEntry.c
-Key name에 대한 PIT 추가 하는 함수 및 디버깅 코드
+Added a function that updates PIT for the key Name and debugging code
 
 metis_RCT.c
-name matching 을 위한 코드 삽입
+Inserted code for Name matching
 
 metis_RCT.h
-name 기능 추가를 위한 헤더 추가
+Added header for adding Name function
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/processor/metis_StandardPIT.c
-Key name 등록을 위한 구조 정의 및 메시지 처리 구조 정의
+Defined structures for key Name registering message processing 
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/io/metis_StreamConnection.c
-메시지 처리를 위한 디버깅 코드 삽입
+Inserted debugging code for message processing
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSchemaV1.c
-Key name 등을 위한 type 값 정의 및 name 값 처리 기능
+Defined Type value for key Name and added Name value processing function
 
 ./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSkeleton.h
-ccnx payload 값에 name 넣기 위한 함수 헤더 정의
-./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSkeleton.c
-ccnx payload 값에 name 넣기 위한 함수 정의
+Defined a function header for putting Name in ccnx payload value
 
+./sb-forwarder/metis/ccnx/forwarder/metis/tlv/metis_TlvSkeleton.c
+Defined a function to put Name in ccnx payload value
 
