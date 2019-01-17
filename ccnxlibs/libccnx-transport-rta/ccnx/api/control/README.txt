@@ -146,7 +146,7 @@ DESCRIBE HOW IT IS COMMUNICATED IN A CCNxMESSAGE
 =====================================
 5) Monitors
 
-A Transport connection can be setup as a Monitor.  A Montior is
+A Transport connection can be setup as a Monitor.  A Monitor is
 an INBOUND ONLY connection for diagnostic purposes.  It should
 contain only the minimum necessary components (API, CODEC, Forwarder).
 
